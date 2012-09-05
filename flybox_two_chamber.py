@@ -28,6 +28,7 @@ class FlyBoxTwoChamber(object):
         y += 2*self.params.thickness_side 
         y += 2*self.params.diam_standoff + 4*self.params.space_standoff
         self.x_outer, self.y_outer = x, y
+        #print(self.x_outer/INCH2MM, self.y_outer/INCH2MM)
 
         # Get list of slots for tabs
         slot_list = []
@@ -98,8 +99,7 @@ class FlyBoxTwoChamber(object):
                                 'location' : (x_hole, y_hole),
                                 'size' : self.params.diam_standoff_hole,
                                 }
-                self.hole_list_standoff.append(hole)
-
+                        self.hole_list_standoff.append(hole)
         self.add_holes(self.hole_list_standoff)
 
         # Create standoff
@@ -123,6 +123,7 @@ class FlyBoxTwoChamber(object):
         y_door -= 2*self.params.space_standoff + self.params.diam_standoff
         y_door += self.params.length_door_handle
         self.x_door, self.y_door = x_door, y_door
+        #print(self.x_door/INCH2MM)
 
         part0 = rounded_box(
                 x_door, 
@@ -158,6 +159,7 @@ class FlyBoxTwoChamber(object):
         x_side = self.params.x_inner
         y_side = self.params.z_inner
         z_side = self.params.thickness_side
+        #print(x_side/INCH2MM)
 
         tab_data_xz_pos = []
         for pos in self.params.tab_pos_side_to_topbot:

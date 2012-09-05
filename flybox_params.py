@@ -13,6 +13,7 @@ style = '1.5mm'
 x_inner = 100.0
 y_inner = 75.0
 z_inner = 10.0
+
 dim_inner = x_inner, y_inner, z_inner 
 
 # Standoffs

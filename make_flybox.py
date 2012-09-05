@@ -4,7 +4,7 @@ from flybox_two_chamber import FlyBoxTwoChamber
 box = FlyBoxTwoChamber(params)
 
 assembly_options = {
-        'explode': (0,0,0),
+        'explode': (0,0,10),
         'show_top_outer': True,
         'show_top_inner': True, 
         'show_bot_outer': True,
