@@ -1,0 +1,19 @@
+flybox_two_chamber
+==================
+
+laser cutting design file files for two chamber flyboxes.
+
+Requirements:
+-------------
+  
+  OpenSCAD: http://www.openscad.org/
+  py2scad:  https://bitbucket.org/iorodeo/py2scad/src 
+
+
+Instructions:
+-------------
+
+ * set desired parameters in flybox_params.py
+ * run "python make_flybox.py"
+
+
