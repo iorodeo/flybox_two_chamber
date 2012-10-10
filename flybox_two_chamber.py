@@ -117,11 +117,14 @@ class FlyBoxTwoChamber(object):
         x_door = self.params.z_inner 
         x_door += self.params.thickness_top_inner 
         x_door += self.params.thickness_bot_inner
-        x_door - self.params.z_tol_door
+        x_door -= self.params.z_tol_door
+        radius_door = 0.5*x_door
+        length_door_handle = 1.5*radius_door
+        diam_door_handle_hole = radius_door
 
         y_door = self.y_outer
         y_door -= 2*self.params.space_standoff + self.params.diam_standoff
-        y_door += self.params.length_door_handle
+        y_door += length_door_handle
         self.x_door, self.y_door = x_door, y_door
         #print(self.x_door/INCH2MM)
 
@@ -129,25 +132,25 @@ class FlyBoxTwoChamber(object):
                 x_door, 
                 y_door, 
                 self.params.thickness_door,
-                self.params.radius_door,
+                radius_door,
                 round_z = False,
                 )
 
         part1 = Cube(size=(
             x_door, 
-            (y_door-self.params.length_door_handle), 
+            (y_door-length_door_handle), 
             self.params.thickness_door
             ))
 
-        part1 = Translate(part1,v=(0,-0.5*self.params.length_door_handle,0))
+        part1 = Translate(part1,v=(0,-0.5*length_door_handle,0))
         self.door = Union([part0,part1])
 
         # Add handle hole to door
         hole = {
                 'panel': 'door',
                 'type': 'round',
-                'location': (0,0.5*y_door - self.params.radius_door),
-                'size': self.params.diam_door_handle_hole,
+                'location': (0,0.5*y_door - radius_door),
+                'size': diam_door_handle_hole,
                 }
         self.add_holes([hole])
 
@@ -497,24 +500,28 @@ class FlyBoxTwoChamber(object):
         else:
             return output_dict
 
-    def write_proj_scad(self):
+    def write_proj_scad(self,part_names=None,fake_proj=False):
         """
         Write the project scad files
         """
-        part_names = [
-                'top_outer',
-                'top_inner',
-                'bot_outer',
-                'bot_inner',
-                'door', 
-                'side',
-                'divider',
-                ]
+        if part_names is None:
+            part_names = [
+                    'top_outer',
+                    'top_inner',
+                    'bot_outer',
+                    'bot_inner',
+                    'door', 
+                    'side',
+                    'divider',
+                    ]
         scad_file_list = []
         for name in part_names:
             scad_name = '{0}.{1}'.format(name,'scad')
             part = getattr(self,name)
-            part_proj = Projection(part)
+            if fake_proj:
+                part_proj = part
+            else:
+                part_proj = Projection(part)
             prog = SCAD_Prog()
             prog.fn = self.params.projection_fn
             prog.add(part_proj)
@@ -522,8 +529,8 @@ class FlyBoxTwoChamber(object):
             scad_file_list.append(scad_name)
         return scad_file_list
 
-    def write_dxf(self,erase_scad=True):
-        scad_file_list = self.write_proj_scad()
+    def write_dxf(self,erase_scad=True,part_names=None):
+        scad_file_list = self.write_proj_scad(part_names=part_names)
         for scad_name in scad_file_list:
             base_name, ext = os.path.splitext(scad_name)
             dxf_name = '{0}.{1}'.format(base_name,'dxf')
@@ -641,46 +648,4 @@ def sign(x):
         return -1
     else:
         return 0
-
-# -----------------------------------------------------------------------------
-if __name__ == '__main__':
-
-    # Testing and development
-
-    import flybox_params as params
-    box = FlyBoxTwoChamber(params)
-
-    if 0:
-        assembly_options = {
-                'explode': (0,0,5),
-                'show_top_outer': False,
-                'show_top_inner': False, 
-                'show_bot_outer': True,
-                'show_bot_inner': True,
-                'show_door_pos': True,
-                'show_door_neg': True,
-                'show_side_pos': True,
-                'show_side_neg': True,
-                'show_divider': True,
-                'show_standoff': True,
-                'door_open': True,
-                'vconfig_only': True,
-                }
-        box.write_assembly_scad('flybox_assembly.scad', **assembly_options)
-        box.write_assembly_stl(**assembly_options)
-
-    # Show transparent tabs
-    if 0:
-        assembly_options = {
-                'assembly_method': box.get_transtabs_assembly,
-                'vconfig_filename': 'transtabs_vconfig.pkl',
-                'explode': (0,0,0),
-                'vconfig_only': False,
-                }
-        box.write_assembly_scad('transtabs_assembly.scad',**assembly_options)
-        box.write_assembly_stl(**assembly_options)
-
-    #box.write_proj_scad()
-    #box.write_dxf()
-
 

@@ -3,8 +3,8 @@ Parameters for two chamber flybox.
 
 Units: mm
 """
-#style = '3mm'
-style = '1.5mm'
+style = '3mm'
+#style = '1.5mm'
 
 # Inner dimensions of the box
 x_inner = 100.0
@@ -23,8 +23,8 @@ if style == '3mm':
     thickness_side = 3.0
     thickness_door = 3.0 
     thickness_divider = 3.0
-    thickness_top_outer = 3.0 
-    thickness_bot_outer = 3.0 
+    thickness_top_outer = 2.5 
+    thickness_bot_outer = 2.5 
 elif style == '1.5mm':
     thickness_side = 1.5
     thickness_door = 1.5 
@@ -34,8 +34,8 @@ elif style == '1.5mm':
 else:
     raise ValueError, 'unknown style {0}'.format(style)
 
-thickness_top_inner = 1.5
-thickness_bot_inner = 1.5 
+thickness_top_inner = 1.0
+thickness_bot_inner = 1.0 
 
 thickness_divider_transtabs = 1.5
 thickness_divider_transtabs_side = 0.5 
@@ -43,11 +43,8 @@ thickness_divider_transtabs_side = 0.5
 # Radii 
 radius_top = 3.0
 radius_bot = 3.0 
-radius_door = 0.5*(z_inner + thickness_top_inner + thickness_bot_inner)
 
 # Door handle and tolerance 
-length_door_handle = 1.5*radius_door
-diam_door_handle_hole = radius_door
 z_tol_door = 0.0
 
 # Tabs
