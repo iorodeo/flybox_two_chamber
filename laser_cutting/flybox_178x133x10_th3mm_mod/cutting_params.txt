@@ -1,0 +1,8 @@
+# Old universal machine
+# -------------------------------------------
+vector cutting:  power 90, speed 2
+raster slots:    power 100, speed 30
+raster engrave:  power 100, speed 80
+
+# New universal machine
+# -------------------------------------------

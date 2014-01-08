@@ -3,13 +3,22 @@ Parameters for two chamber flybox.
 
 Units: mm
 """
+from py2scad import *
+
 style = '3mm'
 #style = '1.5mm'
 
 # Inner dimensions of the box
-x_inner = 100.0
-y_inner = 75.0
-z_inner = 10.0
+if 0:
+    # Small box
+    x_inner = 100.0
+    y_inner = 75.0
+    z_inner = 10.0
+else:
+    # Big box
+    x_inner = 7.0*INCH2MM 
+    y_inner = 5.25*INCH2MM 
+    z_inner = 10.0
 
 dim_inner = x_inner, y_inner, z_inner 
 
@@ -45,7 +54,8 @@ radius_top = 3.0
 radius_bot = 3.0 
 
 # Door handle and tolerance 
-z_tol_door = 0.0
+#z_tol_door = 0.0
+z_tol_door = -0.5
 
 # Tabs
 width_tab_normal = 10.0 
