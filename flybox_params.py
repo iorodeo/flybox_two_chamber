@@ -3,8 +3,8 @@ Parameters for two chamber flybox.
 
 Units: mm
 """
-#style = '3mm'
-style = '1.5mm'
+style = '3mm'
+#style = '1.5mm'
 
 # Inner dimensions of the box
 x_inner = 100.0

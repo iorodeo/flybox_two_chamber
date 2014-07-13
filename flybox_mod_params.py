@@ -9,7 +9,7 @@ style = '3mm'
 #style = '1.5mm'
 
 # Inner dimensions of the box
-if 0:
+if 1:
     # Small box
     x_inner = 100.0
     y_inner = 75.0

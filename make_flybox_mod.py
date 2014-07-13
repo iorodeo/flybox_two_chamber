@@ -1,14 +1,26 @@
+from __future__ import print_function
 import os
 import flybox_params as params
 from flybox_two_chamber import FlyBoxTwoChamber
 import flybox_mod_params as params
+from py2scad import INCH2MM
+
+MM2INCH = 1.0/INCH2MM
+
+
 
 if 1:
     create_proj = False 
     create_stl = False
-    create_dxf = True 
+    create_dxf = False 
     
     box = FlyBoxTwoChamber(params)
+
+    print('x_outer (mm): {0}'.format(box.x_outer))
+    print('y_outer (mm): {0}'.format(box.y_outer))
+    print()
+    print('x_outer (in): {0}'.format(box.x_outer*MM2INCH))
+    print('y_outer (in): {0}'.format(box.y_outer*MM2INCH))
     
     assembly_options = {
             'explode': (0,0,0),
