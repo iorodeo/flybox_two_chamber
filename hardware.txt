@@ -1,0 +1,2 @@
+Standoffs: Qt 6,  6mm diam.,  10mm len.,  female-female M3.,   Mcmaster-Carr 95947A217
+Screws:  Qty 12,  M3, 6mm,   Mcmaster-Carr 95836A205
