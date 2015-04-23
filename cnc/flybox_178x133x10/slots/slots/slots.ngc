@@ -1,0 +1,245 @@
+
+; Generic Start
+G40 (Cancel cutter radius compensation)
+G49 (Cancel tool length offset)
+G80 (Cancel canned cycle)
+G54 (Select coordinate system 1)
+G90 (Set absolute distance mode)
+G20 (Set units to inches)
+G61 (Exact path mode)
+
+F 100.0
+
+; Begin LineSegBoundaryXY
+; ------------------------------------------------------------
+; startZ: 0.0
+; maxArcLen: 0.01
+; startCond: minX
+; cutterComp: None
+; startDwell: 1.0
+; direction: ccw
+; maxCutDepth: 0.03
+; fileName: flybox_178x133x10.dxf
+; convertArcs: True
+; ptEquivTol: 1e-05
+; layers: ['ROUTER_PATH']
+; depth: 0.021
+; safeZ: 0.5
+; dxfTypes: ['LINE', 'ARC']
+; closed: False
+; toolDiam: 0.125
+; pointList: too big
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+
+; LineSegBoundaryXY: rapid move to start x,y
+G0 X0.75054000 Y1.37404998
+
+; LineSegBoundaryXY: dwell
+G4 P1.0
+
+; LineSegBoundaryXY: move to start z
+G1 Z0.00000000
+
+; LineSegBoundaryXY: LineSegPath 0
+G1 X0.75054000 Y1.37404998 Z0.00000000
+G1 X6.80109157 Y1.37404998 Z-0.01050000
+G1 X6.80109157 Y1.37404998 Z-0.01050000
+G1 X0.75054000 Y1.37404998 Z-0.02100000
+
+; LineSegBoundaryXY: LineSegPath 1
+G1 X0.75054000 Y1.37404998 Z-0.02100000
+G1 X6.80109157 Y1.37404998 Z-0.02100000
+G1 X6.80109157 Y1.37404998 Z-0.02100000
+G1 X0.75054000 Y1.37404998 Z-0.02100000
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+G40
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.62554000 Y1.37404998
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.75054000 Y1.37404998
+
+; End LineSegBoundaryXY
+; ------------------------------------------------------------
+
+
+; Begin LineSegBoundaryXY
+; ------------------------------------------------------------
+; startZ: 0.0
+; maxArcLen: 0.01
+; startCond: minX
+; cutterComp: None
+; startDwell: 1.0
+; direction: ccw
+; maxCutDepth: 0.03
+; fileName: flybox_178x133x10.dxf
+; convertArcs: True
+; ptEquivTol: 1e-05
+; layers: ['ROUTER_PATH']
+; depth: 0.021
+; safeZ: 0.5
+; dxfTypes: ['LINE', 'ARC']
+; closed: False
+; toolDiam: 0.125
+; pointList: too big
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+
+; LineSegBoundaryXY: rapid move to start x,y
+G0 X0.74989000 Y8.49209195
+
+; LineSegBoundaryXY: dwell
+G4 P1.0
+
+; LineSegBoundaryXY: move to start z
+G1 Z0.00000000
+
+; LineSegBoundaryXY: LineSegPath 0
+G1 X0.74989000 Y8.49209195 Z0.00000000
+G1 X6.80049557 Y8.49209195 Z-0.01050000
+G1 X6.80049557 Y8.49209195 Z-0.01050000
+G1 X0.74989000 Y8.49209195 Z-0.02100000
+
+; LineSegBoundaryXY: LineSegPath 1
+G1 X0.74989000 Y8.49209195 Z-0.02100000
+G1 X6.80049557 Y8.49209195 Z-0.02100000
+G1 X6.80049557 Y8.49209195 Z-0.02100000
+G1 X0.74989000 Y8.49209195 Z-0.02100000
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+G40
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.62489000 Y8.49209195
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.74989000 Y8.49209195
+
+; End LineSegBoundaryXY
+; ------------------------------------------------------------
+
+
+; Begin LineSegBoundaryXY
+; ------------------------------------------------------------
+; startZ: 0.0
+; maxArcLen: 0.01
+; startCond: minX
+; cutterComp: None
+; startDwell: 1.0
+; direction: ccw
+; maxCutDepth: 0.03
+; fileName: flybox_178x133x10.dxf
+; convertArcs: True
+; ptEquivTol: 1e-05
+; layers: ['ROUTER_PATH']
+; depth: 0.021
+; safeZ: 0.5
+; dxfTypes: ['LINE', 'ARC']
+; closed: False
+; toolDiam: 0.125
+; pointList: too big
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+
+; LineSegBoundaryXY: rapid move to start x,y
+G0 X0.75054000 Y10.37404998
+
+; LineSegBoundaryXY: dwell
+G4 P1.0
+
+; LineSegBoundaryXY: move to start z
+G1 Z0.00000000
+
+; LineSegBoundaryXY: LineSegPath 0
+G1 X0.75054000 Y10.37404998 Z0.00000000
+G1 X6.80109157 Y10.37404998 Z-0.01050000
+G1 X6.80109157 Y10.37404998 Z-0.01050000
+G1 X0.75054000 Y10.37404998 Z-0.02100000
+
+; LineSegBoundaryXY: LineSegPath 1
+G1 X0.75054000 Y10.37404998 Z-0.02100000
+G1 X6.80109157 Y10.37404998 Z-0.02100000
+G1 X6.80109157 Y10.37404998 Z-0.02100000
+G1 X0.75054000 Y10.37404998 Z-0.02100000
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+G40
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.62554000 Y10.37404998
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.75054000 Y10.37404998
+
+; End LineSegBoundaryXY
+; ------------------------------------------------------------
+
+
+; Begin LineSegBoundaryXY
+; ------------------------------------------------------------
+; startZ: 0.0
+; maxArcLen: 0.01
+; startCond: minX
+; cutterComp: None
+; startDwell: 1.0
+; direction: ccw
+; maxCutDepth: 0.03
+; fileName: flybox_178x133x10.dxf
+; convertArcs: True
+; ptEquivTol: 1e-05
+; layers: ['ROUTER_PATH']
+; depth: 0.021
+; safeZ: 0.5
+; dxfTypes: ['LINE', 'ARC']
+; closed: False
+; toolDiam: 0.125
+; pointList: too big
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+
+; LineSegBoundaryXY: rapid move to start x,y
+G0 X0.74989000 Y17.49209195
+
+; LineSegBoundaryXY: dwell
+G4 P1.0
+
+; LineSegBoundaryXY: move to start z
+G1 Z0.00000000
+
+; LineSegBoundaryXY: LineSegPath 0
+G1 X0.74989000 Y17.49209195 Z0.00000000
+G1 X6.80049557 Y17.49209195 Z-0.01050000
+G1 X6.80049557 Y17.49209195 Z-0.01050000
+G1 X0.74989000 Y17.49209195 Z-0.02100000
+
+; LineSegBoundaryXY: LineSegPath 1
+G1 X0.74989000 Y17.49209195 Z-0.02100000
+G1 X6.80049557 Y17.49209195 Z-0.02100000
+G1 X6.80049557 Y17.49209195 Z-0.02100000
+G1 X0.74989000 Y17.49209195 Z-0.02100000
+
+; LineSegBoundaryXY: rapid move to safe z
+G0 Z0.50000000
+G40
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.62489000 Y17.49209195
+
+; LineSegBoundaryXY: rapid move to cancel cutter comp move
+G0 X0.74989000 Y17.49209195
+
+; End LineSegBoundaryXY
+; ------------------------------------------------------------
+
+
+M2 (End program)
